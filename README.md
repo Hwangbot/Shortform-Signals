@@ -30,8 +30,8 @@ This project analyzes engagement and retention metrics across shortform videos f
 
 ## Instructions
 
-1. Open Tableau and load `shortform_videos_large.csv` as the primary data source.
-2. Add `shortform_creators_large.csv` and `shortform_platforms_large.csv` as joins.
+1. Open Tableau and load `shortform_videos.csv` as the primary data source.
+2. Add `shortform_creators.csv` and `shortform_platforms.csv` as joins.
 3. Use joins on `creator_id` and optionally tag platform fields.
 4. Create sheets for each key metric and assemble them into a dashboard.
 5. Apply filters, color coding, and sorting for clarity and interactivity.
