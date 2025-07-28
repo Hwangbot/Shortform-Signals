@@ -1,0 +1,6 @@
+platform,daily_users_millions,avg_session_time_min,algorithm_type
+TikTok,1000,12.5,watch-based
+YouTube Shorts,850,10.2,hybrid
+Instagram Reels,700,9.8,engagement-based
+Snapchat Spotlight,300,7.5,story-based
+Facebook Reels,400,6.9,boost-based
