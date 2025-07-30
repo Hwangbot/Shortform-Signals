@@ -4,7 +4,7 @@
 
 This project analyzes engagement and retention metrics across shortform videos from platforms like TikTok, YouTube Shorts, and Instagram Reels. The analysis is visualized using an interactive Tableau dashboard and comprehensive Python analytics that help uncover trends across formats, creators, and content types.
 
-## 🚀 Features
+## Features
 
 - **Comprehensive Data Analysis**: Advanced analytics with clustering, correlation analysis, and performance ranking
 - **Interactive Visualizations**: Both static matplotlib plots and interactive Plotly charts
@@ -12,7 +12,7 @@ This project analyzes engagement and retention metrics across shortform videos f
 - **Database Integration**: PostgreSQL support with automated data loading
 - **Modular Architecture**: Clean, maintainable code structure
 
-## 📊 Datasets
+## Datasets
 
 - **shortform_videos.csv**  
   Contains 1,000 video records with fields for views, likes, shares, comments, full views, watch time, and hook effectiveness.
@@ -23,7 +23,7 @@ This project analyzes engagement and retention metrics across shortform videos f
 - **shortform_platforms.csv**  
   Compares platform-level metrics like user base, session length, and algorithm behavior.
 
-## 🔧 Key Metrics Analyzed
+## Key Metrics Analyzed
 
 - **Retention Rate** — Percentage of full views vs. total views
 - **Engagement Rate** — Combined likes, comments, and shares relative to views
@@ -34,7 +34,7 @@ This project analyzes engagement and retention metrics across shortform videos f
 - **Duration Optimization** — Relationship between video length and performance
 - **Performance Clustering** — Grouping videos by similar performance patterns
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 - **Python 3.8+** with pandas, numpy, matplotlib, seaborn, plotly
 - **Scikit-learn** for machine learning analysis
@@ -43,25 +43,25 @@ This project analyzes engagement and retention metrics across shortform videos f
 - **Tableau** for interactive dashboards
 - **Jupyter Notebooks** for exploratory analysis
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Shortform Signals/
-├── 📊 shortform_videos.csv          # Main video dataset
-├── 👥 shortform_creators.csv        # Creator information
-├── 🌐 shortform_platforms.csv       # Platform metrics
-├── 📈 analysis.py                   # Comprehensive analysis module
-├── 🔄 data_loader.py                # Data loading and validation
-├── ⚙️ config.py                     # Configuration settings
-├── 📋 requirements.txt              # Python dependencies
-├── 📖 README.md                     # Project documentation
-├── 📓 Notebook/
+├──  shortform_videos.csv          # Main video dataset
+├──  shortform_creators.csv        # Creator information
+├──  shortform_platforms.csv       # Platform metrics
+├──  analysis.py                   # Comprehensive analysis module
+├──  data_loader.py                # Data loading and validation
+├──  config.py                     # Configuration settings
+├──  requirements.txt              # Python dependencies
+├──  README.md                     # Project documentation
+├──  Notebook/
 │   └── shortform_analysis.ipynb     # Jupyter notebook
-├── 🗄️ Database/                     # Database files (if using local DB)
-└── 📊 Tableau Insights.twbx         # Tableau dashboard
+├──  Database/                     # Database files (if using local DB)
+└──  Tableau Insights.twbx         # Tableau dashboard
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 
@@ -99,7 +99,7 @@ python analysis.py
 jupyter notebook Notebook/shortform_analysis.ipynb
 ```
 
-## 📈 Analysis Capabilities
+## Analysis Capabilities
 
 ### Basic Analytics
 
@@ -123,7 +123,7 @@ jupyter notebook Notebook/shortform_analysis.ipynb
 - Comparative bar charts
 - Scatter plots for metric relationships
 
-## 🎯 Key Insights
+## Key Insights
 
 The analysis reveals several important patterns:
 
@@ -133,7 +133,7 @@ The analysis reveals several important patterns:
 4. **Duration Sweet Spot**: Optimal video length varies by content type
 5. **Engagement Patterns**: Strong correlation between hook performance and overall success
 
-## 📊 Tableau Dashboard Setup
+## Tableau Dashboard Setup
 
 1. Open Tableau and load `shortform_videos.csv` as the primary data source
 2. Add `shortform_creators.csv` and `shortform_platforms.csv` as joins
@@ -141,7 +141,7 @@ The analysis reveals several important patterns:
 4. Create sheets for each key metric and assemble them into a dashboard
 5. Apply filters, color coding, and sorting for clarity and interactivity
 
-## 🔍 Data Quality
+## Data Quality
 
 The project includes comprehensive data validation:
 
@@ -150,25 +150,9 @@ The project includes comprehensive data validation:
 - Range validation for metrics
 - Consistency checks across datasets
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🆘 Support
-
-For questions or issues:
-
-1. Check the documentation in this README
-2. Review the Jupyter notebook for examples
-3. Open an issue on GitHub
 
 ---
 
