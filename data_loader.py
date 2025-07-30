@@ -22,10 +22,10 @@ class ShortformDataLoader:
             # Test connection
             with self.engine.connect() as conn:
                 conn.execute(text("SELECT 1"))
-            logger.info("✅ Database connection established successfully")
+            logger.info(" Database connection established successfully")
             return True
         except Exception as e:
-            logger.error(f"❌ Database connection failed: {e}")
+            logger.error(f" Database connection failed: {e}")
             return False
     
     def load_csv_data(self):
@@ -33,22 +33,22 @@ class ShortformDataLoader:
         try:
             # Load videos data
             self.videos = pd.read_csv(VIDEOS_FILE)
-            logger.info(f"✅ Loaded {len(self.videos)} video records")
+            logger.info(f" Loaded {len(self.videos)} video records")
             
             # Load creators data
             self.creators = pd.read_csv(CREATORS_FILE)
-            logger.info(f"✅ Loaded {len(self.creators)} creator records")
+            logger.info(f" Loaded {len(self.creators)} creator records")
             
             # Load platforms data
             self.platforms = pd.read_csv(PLATFORMS_FILE)
-            logger.info(f"✅ Loaded {len(self.platforms)} platform records")
+            logger.info(f" Loaded {len(self.platforms)} platform records")
             
             return True
         except FileNotFoundError as e:
-            logger.error(f"❌ File not found: {e}")
+            logger.error(f" File not found: {e}")
             return False
         except Exception as e:
-            logger.error(f"❌ Error loading data: {e}")
+            logger.error(f" Error loading data: {e}")
             return False
     
     def validate_data(self):
@@ -77,11 +77,11 @@ class ShortformDataLoader:
                 issues.append(f"Negative values found in {col}")
         
         if issues:
-            logger.warning("⚠️ Data validation issues found:")
+            logger.warning(" Data validation issues found:")
             for issue in issues:
                 logger.warning(f"  - {issue}")
         else:
-            logger.info("✅ Data validation passed")
+            logger.info(" Data validation passed")
         
         return len(issues) == 0
     
@@ -102,12 +102,12 @@ class ShortformDataLoader:
         # Share-to-view ratio
         self.videos['share_to_view_ratio'] = self.videos['shares'] / self.videos['views']
         
-        logger.info("✅ Derived metrics calculated")
+        logger.info(" Derived metrics calculated")
     
     def load_to_database(self):
         """Load data to PostgreSQL database"""
         if not self.engine:
-            logger.error("❌ No database connection available")
+            logger.error(" No database connection available")
             return False
         
         try:
@@ -116,10 +116,10 @@ class ShortformDataLoader:
             self.creators.to_sql("shortform_creators", self.engine, if_exists="replace", index=False)
             self.platforms.to_sql("shortform_platforms", self.engine, if_exists="replace", index=False)
             
-            logger.info("✅ Data loaded successfully into PostgreSQL")
+            logger.info(" Data loaded successfully into PostgreSQL")
             return True
         except Exception as e:
-            logger.error(f"❌ Error loading to database: {e}")
+            logger.error(f" Error loading to database: {e}")
             return False
     
     def get_data_summary(self):
@@ -151,7 +151,7 @@ def main():
     
     # Validate data
     if not loader.validate_data():
-        logger.warning("⚠️ Proceeding with validation issues...")
+        logger.warning(" Proceeding with validation issues...")
     
     # Calculate derived metrics
     loader.calculate_derived_metrics()
@@ -163,7 +163,7 @@ def main():
     
     # Print summary
     summary = loader.get_data_summary()
-    logger.info("📊 Data Summary:")
+    logger.info(" Data Summary:")
     for key, value in summary.items():
         logger.info(f"  {key}: {value}")
 

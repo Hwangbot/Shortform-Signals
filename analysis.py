@@ -210,36 +210,36 @@ class ShortformAnalyzer:
         # Format insights
         format_stats = self.format_performance_analysis()
         best_format = format_stats['retention_rate']['mean'].idxmax()
-        insights.append(f"📊 **Best Performing Format**: {best_format} has the highest average retention rate")
+        insights.append(f" **Best Performing Format**: {best_format} has the highest average retention rate")
         
         # Creator insights
         top_creators = self.creator_performance_ranking(5)
         if len(top_creators) > 0:
             top_creator_name = top_creators.index[0] if isinstance(top_creators.index[0], str) else str(top_creators.index[0])
-            insights.append(f"👑 **Top Creator**: {top_creator_name} leads in retention rate")
+            insights.append(f" **Top Creator**: {top_creator_name} leads in retention rate")
         else:
-            insights.append("👑 **Top Creator**: Analysis available in detailed report")
+            insights.append(" **Top Creator**: Analysis available in detailed report")
         
         # Niche insights
         niche_stats = self.niche_analysis()
         best_niche = niche_stats['engagement_rate_mean'].idxmax()
-        insights.append(f"🎯 **Most Engaging Niche**: {best_niche} generates highest engagement rates")
+        insights.append(f" **Most Engaging Niche**: {best_niche} generates highest engagement rates")
         
         # Duration insights
         duration_stats = self.duration_analysis()
         if not duration_stats.empty and 'retention_rate' in duration_stats.columns:
             optimal_duration = duration_stats['retention_rate'].idxmax()
-            insights.append(f"⏱️ **Optimal Duration**: {optimal_duration} videos perform best")
+            insights.append(f" **Optimal Duration**: {optimal_duration} videos perform best")
         else:
-            insights.append("⏱️ **Duration Analysis**: Available in detailed report")
+            insights.append(" **Duration Analysis**: Available in detailed report")
         
         # Correlation insights
         corr_matrix = self.correlation_analysis()
         highest_corr = corr_matrix.unstack().sort_values(ascending=False)
         if len(highest_corr) > 2:
-            insights.append(f"🔗 **Strongest Correlation**: {highest_corr.index[1]} and {highest_corr.index[2]}")
+            insights.append(f" **Strongest Correlation**: {highest_corr.index[1]} and {highest_corr.index[2]}")
         else:
-            insights.append("🔗 **Correlation Analysis**: Available in detailed analysis")
+            insights.append(" **Correlation Analysis**: Available in detailed analysis")
         
         return insights
 
@@ -254,31 +254,31 @@ def main():
     analyzer = ShortformAnalyzer(videos, creators, platforms)
     
     # Run analyses
-    print("📈 SHORTFORM VIDEO ANALYSIS REPORT")
+    print(" SHORTFORM VIDEO ANALYSIS REPORT")
     print("=" * 50)
     
     # Format performance
-    print("\n🎬 FORMAT PERFORMANCE:")
+    print("\n FORMAT PERFORMANCE:")
     print(analyzer.format_performance_analysis())
     
     # Top creators
-    print("\n👑 TOP CREATORS:")
+    print("\n TOP CREATORS:")
     print(analyzer.creator_performance_ranking(10))
     
     # Niche analysis
-    print("\n🎯 NICHE ANALYSIS:")
+    print("\n NICHE ANALYSIS:")
     print(analyzer.niche_analysis())
     
     # Duration analysis
-    print("\n⏱️ DURATION ANALYSIS:")
+    print("\n DURATION ANALYSIS:")
     print(analyzer.duration_analysis())
     
     # Top performers
-    print("\n🏆 TOP PERFORMING VIDEOS:")
+    print("\n TOP PERFORMING VIDEOS:")
     print(analyzer.top_performers_analysis('retention_rate', 10))
     
     # Generate insights
-    print("\n💡 KEY INSIGHTS:")
+    print("\n KEY INSIGHTS:")
     insights = analyzer.generate_insights_report()
     for insight in insights:
         print(f"  {insight}")
@@ -286,7 +286,7 @@ def main():
     # Create visualizations
     fig = analyzer.create_visualizations()
     plt.savefig('shortform_analysis.png', dpi=300, bbox_inches='tight')
-    print("\n📊 Visualizations saved as 'shortform_analysis.png'")
+    print("\n Visualizations saved as 'shortform_analysis.png'")
 
 if __name__ == "__main__":
     main() 

@@ -20,7 +20,7 @@ def setup_notebook_files():
         "shortform_platforms.csv"
     ]
     
-    print("📁 Setting up notebook files...")
+    print(" Setting up notebook files...")
     
     for file in csv_files:
         source = project_root / file
@@ -28,11 +28,11 @@ def setup_notebook_files():
         
         if source.exists():
             shutil.copy2(source, destination)
-            print(f"✅ Copied {file} to Notebook directory")
+            print(f" Copied {file} to Notebook directory")
         else:
-            print(f"❌ Source file {file} not found")
+            print(f" Source file {file} not found")
     
-    print("🎉 Setup complete! You can now run the notebook from the Notebook directory.")
+    print(" Setup complete! You can now run the notebook from the Notebook directory.")
 
 if __name__ == "__main__":
     setup_notebook_files() 
